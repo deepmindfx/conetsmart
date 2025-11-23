@@ -75,9 +75,9 @@ const LocationCard: React.FC<LocationCardProps> = ({
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
         <div className="flex items-center gap-4">
           <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${
-            location.isActive ? 'bg-green-100' : 'bg-gray-100'
+            location.isActive ? 'bg-orange-100' : 'bg-gray-100'
           }`}>
-            <MapPin className={location.isActive ? 'text-green-600' : 'text-gray-400'} size={24} />
+            <MapPin className={location.isActive ? 'text-orange-600' : 'text-gray-400'} size={24} />
           </div>
           <div>
             <h3 className="text-lg font-semibold text-gray-900">{location.name}</h3>
@@ -91,7 +91,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
         <div className="flex flex-wrap items-center gap-2">
           <span className={`px-2 py-1 rounded-full text-xs ${
             location.isActive 
-              ? 'bg-green-100 text-green-700' 
+              ? 'bg-orange-100 text-orange-700' 
               : 'bg-gray-100 text-gray-700'
           }`}>
             {location.isActive ? 'Active' : 'Inactive'}

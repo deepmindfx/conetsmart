@@ -38,7 +38,7 @@ function AppContent() {
   // Show loading while waiting for initial session, but fail-safe after timeout
   if ((!sessionLoaded && !startupWaitExpired) || ((loading && !authUser) && !startupWaitExpired)) {
     return (
-      <div className="min-h-screen bg-[#34A853] flex items-center justify-center">
+      <div className="min-h-screen bg-[#f27e31] flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
           <div className="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin"></div>
           <div className="text-white text-xl">Loading ConetSmart...</div>
@@ -90,7 +90,7 @@ function App() {
 
   if (isHandlingRefresh) {
     return (
-      <div className="min-h-screen bg-[#34A853] flex items-center justify-center">
+      <div className="min-h-screen bg-[#f27e31] flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
           <div className="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin"></div>
           <div className="text-white text-xl">Clearing session data...</div>

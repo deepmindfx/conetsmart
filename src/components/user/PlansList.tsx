@@ -76,7 +76,7 @@ export const PlansList: React.FC<PlansListProps> = ({ showAll = false, onSeeAllC
               key={plan.id}
               className={`group rounded-3xl relative p-[1px] transition-all duration-200 ${
                 plan.popular
-                  ? 'bg-gradient-to-r from-[#34A853] to-[#1B5E20] hover:from-[#2E7D32] hover:to-[#0D4F17]'
+                  ? 'bg-gradient-to-r from-[#f27e31] to-[#b3521b] hover:from-[#d96d2b] hover:to-[#7c2d12]'
                   : 'bg-gradient-to-r from-[#E3F2FD] to-[#BBDEFB] hover:from-[#CFE8FF] hover:to-[#B7D6FF]'
               } ${
                 isPurchaseInProgress ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer hover:-translate-y-0.5'
@@ -97,20 +97,20 @@ export const PlansList: React.FC<PlansListProps> = ({ showAll = false, onSeeAllC
                   </div>
                   {/* faux sparkline */}
                   <div className="mt-3 h-8 w-full relative">
-                    <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-emerald-400/30 via-green-400/30 to-cyan-400/30"></div>
+                    <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-orange-400/30 via-orange-400/30 to-orange-400/30"></div>
                     <div className="absolute bottom-1 left-0 right-0">
-                      <div className="h-0.5 bg-emerald-300/50 rounded"></div>
+                      <div className="h-0.5 bg-orange-300/50 rounded"></div>
                     </div>
                   </div>
                 </div>
 
                 {/* Footer gradient bar (matches Upgrade Account colors) */}
-                <div className={`p-4 flex items-center justify-between rounded-b-3xl bg-gradient-to-r from-[#34A853] via-[#2E7D32] to-[#1B5E20]`}>
+                <div className={`p-4 flex items-center justify-between rounded-b-3xl bg-gradient-to-r from-[#f27e31] via-[#d96d2b] to-[#b3521b]`}>
                   <div>
                     <div className={`leading-none text-white font-black text-xl drop-shadow`}>₦{plan.price.toLocaleString()}</div>
                     <p className={`text-white/90 text-[11px] font-semibold mt-0.5`}>{getCorrectDurationDisplay(plan.durationHours).toUpperCase()}</p>
                   </div>
-                  <div className={`inline-flex items-center gap-2 font-bold text-[#0D4F17] bg-white px-3 py-1.5 rounded-xl shadow-sm`}> 
+                  <div className={`inline-flex items-center gap-2 font-bold text-[#7c2d12] bg-white px-3 py-1.5 rounded-xl shadow-sm`}> 
                     <span>Get Now</span>
                     <ChevronRight className="w-4 h-4" />
                   </div>

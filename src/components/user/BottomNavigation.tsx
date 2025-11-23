@@ -37,13 +37,13 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = ({
                 >
                   <div className={`flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 ${
                     isActive 
-                      ? 'bg-[#34A853] text-white shadow-lg shadow-green-500/25' 
+                      ? 'bg-[#f27e31] text-white shadow-lg shadow-orange-500/25' 
                       : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
                   }`}>
                     <Icon size={20} />
                   </div>
                   <span className={`text-[10px] mt-1.5 font-medium transition-colors duration-300 ${
-                    isActive ? 'text-[#34A853]' : 'text-gray-500'
+                    isActive ? 'text-[#f27e31]' : 'text-gray-500'
                   }`}>
                     {item.label}
                   </span>

@@ -173,7 +173,7 @@ export const VirtualAccountPage: React.FC<VirtualAccountPageProps> = ({ onBack }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100">
       {/* Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-md mx-auto px-4 py-4">
@@ -196,8 +196,8 @@ export const VirtualAccountPage: React.FC<VirtualAccountPageProps> = ({ onBack }
         {step === 'loading' && (
           <Card className="p-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <div className="animate-spin w-8 h-8 border-3 border-green-500 border-t-transparent rounded-full"></div>
+              <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div className="animate-spin w-8 h-8 border-3 border-orange-500 border-t-transparent rounded-full"></div>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Loading...</h3>
               <p className="text-gray-600">Checking your account details</p>
@@ -213,14 +213,14 @@ export const VirtualAccountPage: React.FC<VirtualAccountPageProps> = ({ onBack }
               </div>
             )}
             {/* Info Card */}
-            <Card className="p-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white">
+            <Card className="p-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
                   <CreditCard size={24} />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold mb-2">Get Your Virtual Account</h3>
-                  <p className="text-green-100 text-sm leading-relaxed">
+                  <p className="text-orange-100 text-sm leading-relaxed">
                     We'll create a dedicated bank account number just for you. Transfer any amount to this account and your wallet will be funded instantly.
                   </p>
                 </div>
@@ -231,8 +231,8 @@ export const VirtualAccountPage: React.FC<VirtualAccountPageProps> = ({ onBack }
             <div className="grid grid-cols-2 gap-4">
               <Card className="p-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
-                    <Clock size={20} className="text-green-600" />
+                  <div className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center">
+                    <Clock size={20} className="text-orange-600" />
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 text-sm">Instant</p>
@@ -243,8 +243,8 @@ export const VirtualAccountPage: React.FC<VirtualAccountPageProps> = ({ onBack }
               
               <Card className="p-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
-                    <Shield size={20} className="text-green-600" />
+                  <div className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center">
+                    <Shield size={20} className="text-orange-600" />
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 text-sm">Secure</p>
@@ -293,12 +293,12 @@ export const VirtualAccountPage: React.FC<VirtualAccountPageProps> = ({ onBack }
                   required
                 />
 
-                <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
                   <div className="flex items-start gap-3">
-                    <Info className="text-green-600 mt-0.5" size={16} />
+                    <Info className="text-orange-600 mt-0.5" size={16} />
                     <div className="text-sm">
-                      <p className="text-green-800 font-medium mb-1">Why BVN is Required</p>
-                      <p className="text-green-700">
+                      <p className="text-orange-800 font-medium mb-1">Why BVN is Required</p>
+                      <p className="text-orange-700">
                         BVN (Bank Verification Number) is required by the Central Bank of Nigeria (CBN) for all virtual account creation. This ensures secure and compliant financial transactions.
                       </p>
                     </div>
@@ -334,12 +334,12 @@ export const VirtualAccountPage: React.FC<VirtualAccountPageProps> = ({ onBack }
         {step === 'account' && virtualAccount && (
           <div className="space-y-6">
             {/* Success Header */}
-            <Card className="p-6 text-center bg-gradient-to-r from-green-500 to-emerald-600 text-white">
+            <Card className="p-6 text-center bg-gradient-to-r from-orange-500 to-orange-600 text-white">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <CheckCircle size={32} />
               </div>
               <h3 className="text-xl font-bold mb-2">Account Created Successfully! 🎉</h3>
-              <p className="text-green-100">
+              <p className="text-orange-100">
                 Your virtual account is ready. Transfer money to fund your wallet instantly.
               </p>
             </Card>
@@ -348,8 +348,8 @@ export const VirtualAccountPage: React.FC<VirtualAccountPageProps> = ({ onBack }
             <Card className="p-6">
               <div className="space-y-6">
                 <div className="text-center pb-4 border-b border-gray-200">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <Building size={24} className="text-green-600" />
+                  <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <Building size={24} className="text-orange-600" />
                   </div>
                   <h4 className="font-bold text-gray-900 text-lg">Virtual Account Details</h4>
                   <p className="text-gray-600 text-sm">Use these details to fund your wallet</p>
@@ -361,7 +361,7 @@ export const VirtualAccountPage: React.FC<VirtualAccountPageProps> = ({ onBack }
                     <p className="text-lg font-bold text-gray-900">{virtualAccount.bankName}</p>
                   </div>
                   
-                  <div className="bg-green-50 p-4 rounded-xl">
+                  <div className="bg-orange-50 p-4 rounded-xl">
                     <p className="text-sm text-gray-600 font-medium mb-2">Account Number</p>
                     <div className="flex items-center justify-between gap-3">
                       <p className="text-2xl font-mono font-bold text-gray-900 tracking-wider">
@@ -369,7 +369,7 @@ export const VirtualAccountPage: React.FC<VirtualAccountPageProps> = ({ onBack }
                       </p>
                       <button
                         onClick={copyAccountNumber}
-                        className="p-3 rounded-xl bg-green-500 hover:bg-green-600 text-white transition-colors flex items-center justify-center gap-2"
+                        className="p-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white transition-colors flex items-center justify-center gap-2"
                       >
                         {copied ? <CheckCircle size={18} /> : <Copy size={18} />}
                         <span className="text-sm font-medium">
@@ -395,7 +395,7 @@ export const VirtualAccountPage: React.FC<VirtualAccountPageProps> = ({ onBack }
                     </div>
                     <div className="bg-gray-50 p-3 rounded-lg">
                       <p className="text-xs text-gray-600 font-medium">Status</p>
-                      <p className="text-sm font-bold text-green-600 capitalize">{virtualAccount.status}</p>
+                      <p className="text-sm font-bold text-orange-600 capitalize">{virtualAccount.status}</p>
                     </div>
                   </div>
                 </div>

@@ -102,20 +102,20 @@ export const AuthForm: React.FC<AuthFormProps> = ({ isAdmin = false }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-50 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-green-400/10 to-emerald-400/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-green-300/10 to-emerald-300/10 rounded-full blur-3xl"></div>
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-orange-400/10 to-orange-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-orange-300/10 to-orange-300/10 rounded-full blur-3xl"></div>
         </div>
         
-        <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl p-8 border-2 border-[#34A853]/30 shadow-2xl shadow-black/20">
+        <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl p-8 border-2 border-[#f27e31]/30 shadow-2xl shadow-black/20">
           {/* Subtle loading indicator for auth check */}
           {profileLoading && (
-            <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-2xl">
-              <div className="flex items-center gap-3 text-green-700 text-sm">
-                <div className="w-4 h-4 border-2 border-green-400 border-t-transparent rounded-full animate-spin"></div>
+            <div className="mb-6 p-4 bg-orange-50 border border-orange-200 rounded-2xl">
+              <div className="flex items-center gap-3 text-orange-700 text-sm">
+                <div className="w-4 h-4 border-2 border-orange-400 border-t-transparent rounded-full animate-spin"></div>
                 <span className="font-medium">Checking authentication...</span>
               </div>
             </div>
@@ -123,7 +123,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({ isAdmin = false }) => {
           
           <div className="text-center mb-8">
             <div className="relative w-20 h-20 mx-auto mb-6">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl shadow-lg"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-500 rounded-2xl shadow-lg"></div>
               <div className="absolute inset-1 bg-white rounded-xl flex items-center justify-center">
                 <img
                   src="/starline-logo.png"
@@ -189,7 +189,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({ isAdmin = false }) => {
                     id="rememberMe"
                     checked={rememberMe}
                     onChange={(e) => setRememberMe(e.target.checked)}
-                    className="w-4 h-4 text-[#34A853] bg-white border-gray-300 rounded focus:ring-[#34A853] focus:ring-2"
+                    className="w-4 h-4 text-[#f27e31] bg-white border-gray-300 rounded focus:ring-[#f27e31] focus:ring-2"
                   />
                   <label htmlFor="rememberMe" className="text-gray-700 text-sm font-medium cursor-pointer hover:text-gray-900 transition-colors">
                     Remember me
@@ -198,7 +198,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({ isAdmin = false }) => {
                 <button
                   type="button"
                   onClick={() => setShowForgotPassword(true)}
-                  className="text-sm text-[#34A853] hover:text-[#2E7D32] font-medium transition-colors"
+                  className="text-sm text-[#f27e31] hover:text-[#d96d2b] font-medium transition-colors"
                 >
                   Forgot Password?
                 </button>
@@ -206,7 +206,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({ isAdmin = false }) => {
             )}
 
             {isLogin && !isAdmin && rememberMe && email && password && (
-              <div className="text-xs text-green-600 font-medium bg-green-50 px-3 py-2 rounded-lg">
+              <div className="text-xs text-orange-600 font-medium bg-orange-50 px-3 py-2 rounded-lg">
                 ✓ Credentials will be saved for quick login
               </div>
             )}
@@ -225,7 +225,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({ isAdmin = false }) => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-4 px-6 bg-gradient-to-r from-[#34A853] to-[#2E7D32] hover:from-[#2E7D32] hover:to-[#1B5E20] disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold text-base rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/25 disabled:cursor-not-allowed disabled:shadow-none transform hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full py-4 px-6 bg-gradient-to-r from-[#f27e31] to-[#d96d2b] hover:from-[#d96d2b] hover:to-[#b3521b] disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold text-base rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-orange-500/25 disabled:cursor-not-allowed disabled:shadow-none transform hover:scale-[1.02] active:scale-[0.98]"
             >
               {loading ? (
                 <div className="flex items-center justify-center gap-3">
@@ -258,7 +258,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({ isAdmin = false }) => {
                 <button
                   type="button"
                   onClick={() => setIsLogin(!isLogin)}
-                  className="inline-flex items-center gap-2 text-[#34A853] hover:text-[#2E7D32] text-sm font-medium transition-all duration-200 hover:underline px-4 py-2 rounded-lg hover:bg-green-50"
+                  className="inline-flex items-center gap-2 text-[#f27e31] hover:text-[#d96d2b] text-sm font-medium transition-all duration-200 hover:underline px-4 py-2 rounded-lg hover:bg-orange-50"
                 >
                   {isLogin ? "Don't have an account? Sign up" : 'Already have an account? Sign in'}
                 </button>
@@ -271,9 +271,9 @@ export const AuthForm: React.FC<AuthFormProps> = ({ isAdmin = false }) => {
       {/* Forgot Password Modal */}
       {showForgotPassword && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-          <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl p-8 border-2 border-[#34A853]/30 shadow-2xl shadow-black/25 w-full max-w-md">
+          <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl p-8 border-2 border-[#f27e31]/30 shadow-2xl shadow-black/25 w-full max-w-md">
             <div className="text-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
@@ -294,9 +294,9 @@ export const AuthForm: React.FC<AuthFormProps> = ({ isAdmin = false }) => {
               />
 
               {resetMessage && (
-                <div className="p-4 bg-green-50 border border-green-200 rounded-2xl">
-                  <div className="flex items-center gap-3 text-green-700 text-sm">
-                    <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                <div className="p-4 bg-orange-50 border border-orange-200 rounded-2xl">
+                  <div className="flex items-center gap-3 text-orange-700 text-sm">
+                    <div className="w-5 h-5 bg-orange-500 rounded-full flex items-center justify-center">
                       <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
@@ -333,7 +333,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({ isAdmin = false }) => {
                 <button
                   type="submit"
                   disabled={resetLoading || !resetEmail}
-                  className="flex-1 px-6 py-3 bg-gradient-to-r from-[#34A853] to-[#2E7D32] hover:from-[#2E7D32] hover:to-[#1B5E20] disabled:from-gray-300 disabled:to-gray-400 text-white font-semibold rounded-2xl transition-all duration-200 hover:scale-105 active:scale-95 disabled:cursor-not-allowed"
+                  className="flex-1 px-6 py-3 bg-gradient-to-r from-[#f27e31] to-[#d96d2b] hover:from-[#d96d2b] hover:to-[#b3521b] disabled:from-gray-300 disabled:to-gray-400 text-white font-semibold rounded-2xl transition-all duration-200 hover:scale-105 active:scale-95 disabled:cursor-not-allowed"
                 >
                   {resetLoading ? (
                     <div className="flex items-center justify-center gap-2">

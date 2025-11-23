@@ -71,12 +71,12 @@ export const PurchaseReceiptModal: React.FC<PurchaseReceiptModalProps> = ({ purc
         <div id="receipt-content" className="p-4 sm:p-6 text-xs sm:text-sm leading-tight space-y-3 sm:space-y-4 overflow-y-auto flex-1">
           {/* Header */}
           <div className="text-center mb-4 sm:mb-6">
-            <h1 className="text-xl sm:text-2xl font-bold text-blue-600 mb-1 sm:mb-2">ConetSmart</h1>
+            <h1 className="text-xl sm:text-2xl font-bold text-orange-600 mb-1 sm:mb-2">ConetSmart</h1>
             <p className="text-gray-600 text-xs sm:text-base">Internet Service Receipt</p>
-            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mt-3 sm:mt-4 mb-1 sm:mb-2">
-              <span className="text-green-600 text-xl sm:text-2xl">✓</span>
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mt-3 sm:mt-4 mb-1 sm:mb-2">
+              <span className="text-orange-600 text-xl sm:text-2xl">✓</span>
             </div>
-            <p className="text-green-600 font-semibold text-xs sm:text-base">Payment Successful</p>
+            <p className="text-orange-600 font-semibold text-xs sm:text-base">Payment Successful</p>
           </div>
 
           {/* Receipt Details */}
@@ -108,31 +108,31 @@ export const PurchaseReceiptModal: React.FC<PurchaseReceiptModalProps> = ({ purc
               </div>
             </div>
 
-            <div className="bg-blue-50 p-3 rounded-lg">
-              <h3 className="font-semibold mb-3 flex items-center gap-2 text-blue-900">
+            <div className="bg-orange-50 p-3 rounded-lg">
+              <h3 className="font-semibold mb-3 flex items-center gap-2 text-orange-900">
                 <MapPin size={16} />
                 Location & Access
               </h3>
               <div className="space-y-1 text-xs">
                 <div className="flex justify-between">
-                  <span className="text-blue-700">Location:</span>
-                  <span className="font-medium text-blue-900">{location?.name || 'Unknown Location'}</span>
+                  <span className="text-orange-700">Location:</span>
+                  <span className="font-medium text-orange-900">{location?.name || 'Unknown Location'}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-blue-700">WiFi Network:</span>
-                  <span className="font-medium text-blue-900">{location?.wifiName || 'N/A'}</span>
+                  <span className="text-orange-700">WiFi Network:</span>
+                  <span className="font-medium text-orange-900">{location?.wifiName || 'N/A'}</span>
                 </div>
                 {purchase.status === 'active' || purchase.status === 'used' || purchase.status === 'expired' ? (
                   <>
                     <div className="flex justify-between">
-                      <span className="text-blue-700">Username:</span>
-                      <span className="font-mono bg-white px-2 py-1 rounded text-blue-900">
+                      <span className="text-orange-700">Username:</span>
+                      <span className="font-mono bg-white px-2 py-1 rounded text-orange-900">
                         {purchase.mikrotikCredentials.username}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-blue-700">Password:</span>
-                      <span className="font-mono bg-white px-2 py-1 rounded text-blue-900">
+                      <span className="text-orange-700">Password:</span>
+                      <span className="font-mono bg-white px-2 py-1 rounded text-orange-900">
                         {purchase.mikrotikCredentials.password}
                       </span>
                     </div>
@@ -173,7 +173,7 @@ export const PurchaseReceiptModal: React.FC<PurchaseReceiptModalProps> = ({ purc
                   <span className="text-gray-600">Status:</span>
                   <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                     purchase.status === 'active' 
-                      ? 'bg-green-100 text-green-700' 
+                      ? 'bg-orange-100 text-orange-700' 
                       : purchase.status === 'expired'
                       ? 'bg-red-100 text-red-700'
                       : 'bg-gray-100 text-gray-700'
@@ -184,19 +184,19 @@ export const PurchaseReceiptModal: React.FC<PurchaseReceiptModalProps> = ({ purc
               </div>
             </div>
 
-            <div className="bg-green-50 p-3 rounded-lg">
-              <h3 className="font-semibold mb-3 flex items-center gap-2 text-green-900">
+            <div className="bg-orange-50 p-3 rounded-lg">
+              <h3 className="font-semibold mb-3 flex items-center gap-2 text-orange-900">
                 <CreditCard size={16} />
                 Payment Summary
               </h3>
               <div className="space-y-1 text-xs">
                 <div className="flex justify-between">
-                  <span className="text-green-700">Customer:</span>
-                  <span className="font-medium text-green-900">{user?.email}</span>
+                  <span className="text-orange-700">Customer:</span>
+                  <span className="font-medium text-orange-900">{user?.email}</span>
                 </div>
                 <div className="flex justify-between border-t pt-2">
-                  <span className="text-green-700 font-semibold">Total Amount:</span>
-                  <span className="font-bold text-lg text-green-900">₦{purchase.amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                  <span className="text-orange-700 font-semibold">Total Amount:</span>
+                  <span className="font-bold text-lg text-orange-900">₦{purchase.amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                 </div>
               </div>
             </div>

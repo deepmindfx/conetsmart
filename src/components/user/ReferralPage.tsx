@@ -198,8 +198,8 @@ export const ReferralPage: React.FC = () => {
             <h2 className="text-2xl font-bold text-gray-900">Your Referral Code</h2>
             <p className="text-gray-600">Share this unique code with friends and family</p>
           </div>
-          <div className="bg-green-50 px-4 py-3 rounded-2xl border border-green-100">
-            <span className="text-[#2E7D32] text-sm font-semibold">Minimum payout: ₦{minPayout}</span>
+          <div className="bg-orange-50 px-4 py-3 rounded-2xl border border-orange-100">
+            <span className="text-[#d96d2b] text-sm font-semibold">Minimum payout: ₦{minPayout}</span>
           </div>
         </div>
 
@@ -207,13 +207,13 @@ export const ReferralPage: React.FC = () => {
           <div className="flex items-center justify-between gap-4">
             <div>
               <p className="text-xs text-gray-500">Referral Code</p>
-              <p className="text-3xl font-black text-[#1B5E20] tracking-wide">{user?.referralCode}</p>
+              <p className="text-3xl font-black text-[#b3521b] tracking-wide">{user?.referralCode}</p>
             </div>
             <Button
               variant="outline"
               size="sm"
               onClick={copyReferralCode}
-              className="flex items-center gap-2 bg-white border-2 border-blue-200 text-blue-700 font-semibold rounded-xl hover:bg-green-50 hover:border-blue-300 transition-all duration-200 shadow-sm hover:shadow"
+              className="flex items-center gap-2 bg-white border-2 border-blue-200 text-blue-700 font-semibold rounded-xl hover:bg-orange-50 hover:border-blue-300 transition-all duration-200 shadow-sm hover:shadow"
             >
               <Copy size={16} />
               {copied ? 'Copied!' : 'Copy'}
@@ -226,33 +226,33 @@ export const ReferralPage: React.FC = () => {
             type="text"
             value={referralUrl}
             readOnly
-            className="flex-1 px-4 py-3 border border-gray-200 rounded-2xl bg-white text-sm font-medium focus:ring-2 focus:ring-[#34A853]/30 focus:border-[#34A853]/40 transition-all duration-200 min-w-0"
+            className="flex-1 px-4 py-3 border border-gray-200 rounded-2xl bg-white text-sm font-medium focus:ring-2 focus:ring-[#f27e31]/30 focus:border-[#f27e31]/40 transition-all duration-200 min-w-0"
           />
           <Button
             variant="outline"
             size="sm"
             onClick={copyReferralCode}
-            className="px-6 py-3 bg-[#34A853] text-white font-semibold rounded-2xl hover:bg-[#2E7D32] transition-all duration-200 shadow-sm hover:shadow whitespace-nowrap"
+            className="px-6 py-3 bg-[#f27e31] text-white font-semibold rounded-2xl hover:bg-[#d96d2b] transition-all duration-200 shadow-sm hover:shadow whitespace-nowrap"
           >
             Copy Link
           </Button>
         </div>
 
-        <div className="mt-6 bg-gradient-to-r from-blue-50 to-indigo-50 p-5 rounded-2xl border border-green-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="mt-6 bg-gradient-to-r from-blue-50 to-indigo-50 p-5 rounded-2xl border border-orange-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex-1">
             <p className="text-sm text-blue-800 font-semibold">Your earnings</p>
-            <p className="text-xl text-[#1B5E20] font-black">₦{myEarnings.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+            <p className="text-xl text-[#b3521b] font-black">₦{myEarnings.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
           </div>
           <Button 
             onClick={requestPayout} 
             disabled={!canRequestPayout || payoutRequesting}
-            className="w-full sm:w-auto bg-gradient-to-r from-[#34A853] to-[#1B5E20] hover:from-[#2E7D32] hover:to-[#0D4F17] text-white font-bold px-6 py-3 rounded-2xl transition-all duration-200 shadow-sm hover:shadow"
+            className="w-full sm:w-auto bg-gradient-to-r from-[#f27e31] to-[#b3521b] hover:from-[#d96d2b] hover:to-[#7c2d12] text-white font-bold px-6 py-3 rounded-2xl transition-all duration-200 shadow-sm hover:shadow"
           >
             {payoutRequesting ? 'Requesting...' : 'Request Payout'}
           </Button>
         </div>
         {payoutMessage && (
-          <div className="mt-3 bg-green-50 border border-green-100 text-blue-800 px-4 py-3 rounded-2xl text-sm font-medium">
+          <div className="mt-3 bg-orange-50 border border-orange-100 text-blue-800 px-4 py-3 rounded-2xl text-sm font-medium">
             {payoutMessage}
           </div>
         )}
@@ -268,19 +268,19 @@ export const ReferralPage: React.FC = () => {
         {myReferrals.length > 0 ? (
           <div className="space-y-8">
             <div className="grid grid-cols-2 gap-4 max-[450px]:gap-3">
-              <div className="bg-gradient-to-br from-[#34A853] to-[#1B5E20] p-4 max-[450px]:p-3 rounded-2xl text-center text-white shadow-xl border border-white/10">
+              <div className="bg-gradient-to-br from-[#f27e31] to-[#b3521b] p-4 max-[450px]:p-3 rounded-2xl text-center text-white shadow-xl border border-white/10">
                 <div className="w-12 h-12 max-[450px]:w-10 max-[450px]:h-10 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-3 max-[450px]:mb-2 border-2 border-white/30">
                   <Users className="text-white" size={24} />
                 </div>
                 <p className="text-3xl max-[450px]:text-2xl font-black mb-2 max-[450px]:mb-1 drop-shadow-lg">{myReferrals.length}</p>
                 <p className="text-blue-100 font-semibold text-sm max-[450px]:text-xs">Total Referrals</p>
               </div>
-              <div className="bg-gradient-to-br from-emerald-500 to-green-600 p-4 max-[450px]:p-3 rounded-2xl text-center text-white shadow-xl border border-white/10">
+              <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-4 max-[450px]:p-3 rounded-2xl text-center text-white shadow-xl border border-white/10">
                 <div className="w-12 h-12 max-[450px]:w-10 max-[450px]:h-10 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-3 max-[450px]:mb-2 border-2 border-white/30">
                   <DollarSign className="text-white" size={24} />
                 </div>
                 <p className="text-3xl max-[450px]:text-2xl font-black mb-2 max-[450px]:mb-1 drop-shadow-lg">₦{myEarnings.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
-                <p className="text-emerald-100 font-semibold text-sm max-[450px]:text-xs">Total Earnings</p>
+                <p className="text-orange-100 font-semibold text-sm max-[450px]:text-xs">Total Earnings</p>
               </div>
             </div>
             
@@ -304,7 +304,7 @@ export const ReferralPage: React.FC = () => {
                           </p>
                         </div>
                         <div className="text-right max-[450px]:text-left max-[450px]:w-full max-[450px]:flex max-[450px]:justify-between max-[450px]:items-center">
-                          <p className="font-bold text-xl max-[450px]:text-lg text-emerald-600">₦{userEarnings.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                          <p className="font-bold text-xl max-[450px]:text-lg text-orange-600">₦{userEarnings.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
                           <p className="text-sm max-[450px]:text-xs text-gray-600">{userPurchases.length} purchases</p>
                         </div>
                       </div>
@@ -342,7 +342,7 @@ export const ReferralPage: React.FC = () => {
         <div className="space-y-4">
           {/* Step 1 */}
           <div className="flex gap-4 items-start p-4 rounded-2xl border border-gray-100 bg-gray-50/60">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-sm font-extrabold bg-gradient-to-br from-[#34A853] to-[#1B5E20] shadow-sm">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-sm font-extrabold bg-gradient-to-br from-[#f27e31] to-[#b3521b] shadow-sm">
               1
             </div>
             <div className="flex-1">
@@ -353,7 +353,7 @@ export const ReferralPage: React.FC = () => {
 
           {/* Step 2 */}
           <div className="flex gap-4 items-start p-4 rounded-2xl border border-gray-100 bg-gray-50/60">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-sm font-extrabold bg-gradient-to-br from-[#34A853] to-[#1B5E20] shadow-sm">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-sm font-extrabold bg-gradient-to-br from-[#f27e31] to-[#b3521b] shadow-sm">
               2
             </div>
             <div className="flex-1">
@@ -364,7 +364,7 @@ export const ReferralPage: React.FC = () => {
 
           {/* Step 3 */}
           <div className="flex gap-4 items-start p-4 rounded-2xl border border-gray-100 bg-gray-50/60">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-sm font-extrabold bg-gradient-to-br from-[#34A853] to-[#1B5E20] shadow-sm">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-sm font-extrabold bg-gradient-to-br from-[#f27e31] to-[#b3521b] shadow-sm">
               3
             </div>
             <div className="flex-1">

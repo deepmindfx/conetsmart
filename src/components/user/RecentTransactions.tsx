@@ -22,13 +22,13 @@ export const RecentTransactions: React.FC<RecentTransactionsProps> = ({ onNaviga
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'active':
-        return 'bg-green-100 text-green-700';
+        return 'bg-orange-100 text-orange-700';
       case 'expired':
         return 'bg-red-100 text-red-700';
       case 'pending':
         return 'bg-yellow-100 text-yellow-700';
       case 'success':
-        return 'bg-green-100 text-green-700';
+        return 'bg-orange-100 text-orange-700';
       case 'failed':
         return 'bg-red-100 text-red-700';
       default:
@@ -58,9 +58,9 @@ export const RecentTransactions: React.FC<RecentTransactionsProps> = ({ onNaviga
       case 'transfer_sent':
         return <Send size={14} className="text-red-600" />;
       case 'transfer_received':
-        return <ArrowDown size={14} className="text-green-600" />;
+        return <ArrowDown size={14} className="text-orange-600" />;
       case 'wallet_funding':
-        return <ArrowDown size={14} className="text-green-600" />;
+        return <ArrowDown size={14} className="text-orange-600" />;
       case 'plan_purchase':
         return <Wifi size={14} className="text-purple-600" />;
       default:
@@ -117,7 +117,7 @@ export const RecentTransactions: React.FC<RecentTransactionsProps> = ({ onNaviga
   if (recentTransactions.length === 0) {
     return (
       <div className="text-center py-8">
-        <div className="w-16 h-16 bg-gradient-to-br from-[#34A853] to-[#1B5E20] rounded-3xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+        <div className="w-16 h-16 bg-gradient-to-br from-[#f27e31] to-[#b3521b] rounded-3xl flex items-center justify-center mx-auto mb-4 shadow-lg">
           <TrendingUp className="text-white" size={28} />
         </div>
         <h4 className="font-bold text-gray-900 mb-2 text-lg">Start Your Journey</h4>
@@ -133,7 +133,7 @@ export const RecentTransactions: React.FC<RecentTransactionsProps> = ({ onNaviga
       {/* Activity Badge */}
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+          <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
           <span className="text-xs text-gray-600 font-medium">
             {recentTransactions.length} recent transaction{recentTransactions.length !== 1 ? 's' : ''}
           </span>
@@ -151,11 +151,11 @@ export const RecentTransactions: React.FC<RecentTransactionsProps> = ({ onNaviga
           return (
             <div 
               key={transaction.id} 
-              className="group relative bg-gray-50 hover:bg-green-50 p-4 rounded-2xl border border-gray-100 hover:border-[#34A853]/20 transition-all duration-300 hover:shadow-sm max-[450px]:p-3 max-[340px]:p-2.5"
+              className="group relative bg-gray-50 hover:bg-orange-50 p-4 rounded-2xl border border-gray-100 hover:border-[#f27e31]/20 transition-all duration-300 hover:shadow-sm max-[450px]:p-3 max-[340px]:p-2.5"
             >
               {/* Status indicator dot */}
               <div className={`absolute left-4 top-4 w-3 h-3 rounded-full ${
-                transaction.status === 'success' || transaction.status === 'active' ? 'bg-green-500' : 
+                transaction.status === 'success' || transaction.status === 'active' ? 'bg-orange-500' : 
                 transaction.status === 'failed' || transaction.status === 'expired' ? 'bg-red-500' : 'bg-yellow-500'
               }`} />
               
@@ -163,7 +163,7 @@ export const RecentTransactions: React.FC<RecentTransactionsProps> = ({ onNaviga
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center space-x-3 mb-2 max-[450px]:space-x-2 max-[450px]:mb-1.5">
                     <div className={`w-10 h-10 rounded-2xl flex items-center justify-center shadow-sm flex-shrink-0 ${
-                      transaction.status === 'success' || transaction.status === 'active' ? 'bg-green-100' : 
+                      transaction.status === 'success' || transaction.status === 'active' ? 'bg-orange-100' : 
                       transaction.status === 'failed' || transaction.status === 'expired' ? 'bg-red-100' : 'bg-yellow-100'
                     } max-[450px]:w-9 max-[450px]:h-9`}>
                       {getTransactionIcon(transaction.type)}
@@ -187,7 +187,7 @@ export const RecentTransactions: React.FC<RecentTransactionsProps> = ({ onNaviga
                       </div>
                       {transaction.type === 'plan_purchase' && transaction.status === 'active' && transaction.mikrotik_username && (
                         <div className="mt-2 max-[340px]:mt-1.5">
-                          <span className="text-xs text-[#34A853] font-medium bg-green-50 px-2 py-1 rounded-lg inline-block max-[340px]:text-[11px] max-[340px]:px-1.5 max-[340px]:py-0.5">
+                          <span className="text-xs text-[#f27e31] font-medium bg-orange-50 px-2 py-1 rounded-lg inline-block max-[340px]:text-[11px] max-[340px]:px-1.5 max-[340px]:py-0.5">
                             User: {transaction.mikrotik_username}
                           </span>
                         </div>
@@ -202,7 +202,7 @@ export const RecentTransactions: React.FC<RecentTransactionsProps> = ({ onNaviga
                   </span>
                   <p className={`text-lg font-bold mt-1 max-[450px]:text-base ${
                     isTransferSent ? 'text-red-600' : 
-                    isTransferReceived ? 'text-green-600' : 
+                    isTransferReceived ? 'text-orange-600' : 
                     'text-gray-900'
                   }`}>
                     {isTransferSent ? '-' : isTransferReceived ? '+' : ''}₦{transaction.amount.toLocaleString()}
@@ -219,7 +219,7 @@ export const RecentTransactions: React.FC<RecentTransactionsProps> = ({ onNaviga
         <div className="pt-4 border-t border-gray-100">
           <button 
             onClick={onNavigateToHistory}
-            className="w-full bg-gradient-to-r from-[#34A853] to-[#1B5E20] hover:from-[#2E7D32] hover:to-[#0D4F17] text-white p-3 rounded-2xl font-semibold transition-all duration-300 hover:shadow-lg flex items-center justify-center space-x-2 group"
+            className="w-full bg-gradient-to-r from-[#f27e31] to-[#b3521b] hover:from-[#d96d2b] hover:to-[#7c2d12] text-white p-3 rounded-2xl font-semibold transition-all duration-300 hover:shadow-lg flex items-center justify-center space-x-2 group"
           >
             <span>View All Transactions</span>
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

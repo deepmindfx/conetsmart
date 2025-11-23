@@ -254,14 +254,14 @@ export const TransferModal: React.FC<TransferModalProps> = ({ isOpen, onClose, o
         </div>
 
         {/* Disclaimer */}
-        <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+        <div className="mb-4 p-3 bg-orange-50 border border-orange-200 rounded-lg">
           <div className="flex items-start gap-2">
-            <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-              <span className="text-green-600 text-xs font-bold">i</span>
+            <div className="w-5 h-5 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span className="text-orange-600 text-xs font-bold">i</span>
             </div>
             <div>
-            <p className="text-green-800 text-sm font-medium">ConetSmart Wallet Transfer</p>
-              <p className="text-green-700 text-xs mt-1">
+            <p className="text-orange-800 text-sm font-medium">ConetSmart Wallet Transfer</p>
+              <p className="text-orange-700 text-xs mt-1">
                 This feature allows you to transfer funds between ConetSmart wallets only. 
                 You can send money to other users using their email or phone number.
               </p>
@@ -311,10 +311,10 @@ export const TransferModal: React.FC<TransferModalProps> = ({ isOpen, onClose, o
 
         {step === 'amount' && recipientUser && (
           <div className="space-y-4">
-            <div className="p-4 bg-green-50 rounded-lg">
+            <div className="p-4 bg-orange-50 rounded-lg">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                  <User size={20} className="text-green-600" />
+                <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                  <User size={20} className="text-orange-600" />
                 </div>
                 <div>
                   <p className="font-medium text-gray-900">
@@ -393,7 +393,7 @@ export const TransferModal: React.FC<TransferModalProps> = ({ isOpen, onClose, o
         {step === 'confirm' && recipientUser && (
           <div className="space-y-4">
             <div className="text-center">
-              <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
+              <CheckCircle className="w-12 h-12 text-orange-500 mx-auto mb-4" />
               <h4 className="text-lg font-semibold text-gray-900 mb-2">Confirm Transfer</h4>
             </div>
 
