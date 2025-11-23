@@ -5,6 +5,8 @@ import { AuthForm } from './components/auth/AuthForm';
 import { LandingPage } from './components/LandingPage';
 import { UserDashboard } from './components/user/UserDashboard';
 import { AdminDashboard } from './components/admin/AdminDashboard';
+import { PrivacyPolicy } from './components/PrivacyPolicy';
+import { TermsOfService } from './components/TermsOfService';
 import { initPWASessionManagement, debugStorage } from './utils/pwaUtils';
 import { clearSessionAndRedirect } from './utils/sessionClear';
 
@@ -29,11 +31,20 @@ if (typeof window !== 'undefined') {
 function AppContent() {
   const { user, authUser, isAdmin, loading, shouldShowLogin, sessionLoaded } = useAuth();
   const [startupWaitExpired, setStartupWaitExpired] = useState(false);
+  const path = window.location.pathname;
 
   useEffect(() => {
     const t = setTimeout(() => setStartupWaitExpired(true), 8000);
     return () => clearTimeout(t);
   }, []);
+
+  // Public routes that don't require auth and should be visible even if logged in
+  if (path === '/privacy') {
+    return <PrivacyPolicy />;
+  }
+  if (path === '/terms') {
+    return <TermsOfService />;
+  }
 
   // Show loading while waiting for initial session, but fail-safe after timeout
   if ((!sessionLoaded && !startupWaitExpired) || ((loading && !authUser) && !startupWaitExpired)) {
@@ -56,7 +67,6 @@ function AppContent() {
   }
 
   // Not authenticated - show landing page at root, login elsewhere
-  const path = window.location.pathname;
   const isAdminRoute = path.includes('/admin');
   if (path === '/' || path === '/index.html') {
     return <LandingPage />;

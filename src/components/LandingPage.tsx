@@ -190,8 +190,8 @@ export const LandingPage: React.FC = () => {
             <div>
               <h4 className="font-bold text-gray-900 mb-4">Legal</h4>
               <ul className="space-y-3 text-sm text-gray-600">
-                <li><a href="#" className="hover:text-[#f27e31]">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-[#f27e31]">Terms of Service</a></li>
+                <li><a href="/privacy" className="hover:text-[#f27e31]">Privacy Policy</a></li>
+                <li><a href="/terms" className="hover:text-[#f27e31]">Terms of Service</a></li>
               </ul>
             </div>
           </div>
