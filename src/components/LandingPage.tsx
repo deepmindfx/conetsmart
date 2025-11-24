@@ -53,8 +53,8 @@ export const LandingPage: React.FC = () => {
             alt="Background" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-white/90 backdrop-blur-sm"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-white"></div>
+          <div className="absolute inset-0 bg-white/60 backdrop-blur-[1px]"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/90"></div>
         </div>
 
         {/* Background Gradients */}
